@@ -85,7 +85,7 @@ const Navbar = () => {
         </svg>
       </button>
       {isOpen && (
-        <ul className="absolute z-10 top-full left-0 mt-1 w-full bg-white rounded-md shadow-lg flex-md w-fit">
+        <ul className="absolute z-10 top-full left-0 mt-1 w-full bg-white rounded-md shadow-lg flex-md max-w-fit">
           {/* Dropdown items */}
           <Link href={'/aadiyogiforngo'}><li className="flex py-1 px-3 hover:bg-gray-100 cursor-pointer">Aadiyogi for NGO</li></Link>
           <Link href={'/maditationgroup'}><li className="flex py-1 px-3 hover:bg-gray-100 cursor-pointer">Maditation Group</li></Link>
