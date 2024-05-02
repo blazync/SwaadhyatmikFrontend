@@ -50,8 +50,8 @@ const Login = ({ updateUserLoggedIn }) => {
   });
 
   return (
-    <div className="h-screen flex justify-center items-center" style={{ margin: '5%' }}>
-      <div className="max-w-full max-w-md bg-white rounded-lg p-8 container flex">
+    <div className=" flex justify-center items-center" style={{ margin: '5%' }}>
+      <div className="max-w-full max-w-md bg-white rounded-lg container card shadow-lg p-5 ">
         {/* Left side */}
         <div className="flex-1">
           <div className="text-center">
@@ -59,8 +59,8 @@ const Login = ({ updateUserLoggedIn }) => {
               src="/img/about.png"
               alt="avatar"
               className="mx-auto"
-              width={400}
-              height={400}
+              width={100}
+              height={100}
             />
             <h1 className="text-4xl font-bold mt-4">Welcome Back!</h1>
             <p className="text-gray-500">Login to Get Started with Swaadhyatmik Services</p>
@@ -68,8 +68,8 @@ const Login = ({ updateUserLoggedIn }) => {
         </div>
         {/* Right side */}
         <div className="flex-1">
-          <h1 className="text-4xl font-bold mt-4">Login Now</h1>
-          <p className="text-gray-500">Login to Get Started with Us</p>
+          {/* <h1 className="text-4xl font-bold mt-4">Login Now</h1>
+          <p className="text-gray-500">Login to Get Started with Us</p> */}
           <form className="mt-6" onSubmit={formik.handleSubmit}>
   
             <div className="mb-4">
