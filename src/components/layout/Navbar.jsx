@@ -85,14 +85,14 @@ const Navbar = () => {
         </svg>
       </button>
       {isOpen && (
-        <ul className="absolute z-10 top-full left-0 mt-1 w-full bg-white rounded-md shadow-lg flex-md w-fit">
+        <ul className="absolute  z-10 top-full left-0 mt-1 max-w-full bg-white rounded-md shadow-lg flex-md">
           {/* Dropdown items */}
-          <Link href={'/aadiyogiforngo'}><li className="flex py-1 px-3 hover:bg-gray-100 cursor-pointer">Aadiyogi for NGO</li></Link>
+          <Link href={'/swaadhyatmikfoundation'}><li className="flex py-1 px-3 hover:bg-gray-100 cursor-pointer">Swaadhyatmik Foundation</li></Link>
           <Link href={'/maditationgroup'}><li className="flex py-1 px-3 hover:bg-gray-100 cursor-pointer">Maditation Group</li></Link>
-          <Link href={'/freeconsultation'}><li className="flex py-1 px-3 hover:bg-gray-100 cursor-pointer">Free Consultation</li></Link>
-          <Link href={'/yogamatcafe'}><li className="flex py-1 px-3 hover:bg-gray-100 cursor-pointer">Yoga Mat Cafe</li> </Link> 
+          <Link href={'/freecounseling'}><li className="flex py-1 px-3 hover:bg-gray-100 cursor-pointer">Free Counseling</li></Link>
+          <Link href={'/yogamaycafe'}><li className="flex py-1 px-3 hover:bg-gray-100 cursor-pointer">YogaMay Cafe</li> </Link> 
         <Link href={'/aurvedictherapy'}><li className="flex py-1 px-3 hover:bg-gray-100 cursor-pointer">Aurvedic Therapy</li></Link>
-          <Link href={'/aurvedicgurukul'}><li className="flex py-1 px-3 hover:bg-gray-100 cursor-pointer">Aurvedic Gurukul</li></Link>
+          <Link href={'/swaadhyatmikgurukul'}><li className="flex py-1 px-3 hover:bg-gray-100 cursor-pointer">Swaadhyatmik Gurukul</li></Link>
         </ul>
       )}
     </li>

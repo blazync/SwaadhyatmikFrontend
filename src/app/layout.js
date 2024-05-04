@@ -5,38 +5,48 @@ import Footer from "../components/layout/Footer";
 import AdminNavbar from "../components/layout/AdminNavbar";
 import AdminFooter from "../components/layout/AdminFooter";
 import AdminSidebar from "../components/layout/AdminSidebar";
-import { Inter } from "next/font/google"; // Import Inter font
+import { getJwtConfig } from "../config/JwtConfig";
 import "./index.css";
 
-const inter = Inter({ subsets: ["latin"] }); // Initialize Inter font
 
 export default function RootLayout({ children }) {
-  const [loggedIn, setLoggedIn] = useState(false);
+  const [isAdminLoggedIn, setIsAdminLoggedIn] = useState(false);
 
   useEffect(() => {
-    // Check user login status from session storage
-    const userLoggedIn = sessionStorage.getItem("LoggedIn") === 'true';
-    setLoggedIn(userLoggedIn);
+    checkAdminLoggedIn();
   }, []);
+
+  const checkAdminLoggedIn = async () => {
+    try {
+      if (getJwtConfig().role === "admin") // Corrected role check to "admin"
+        setIsAdminLoggedIn(true);
+    } catch (error) {
+      setIsAdminLoggedIn(false);
+    }
+  };
 
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body >
         <div>
-          {loggedIn ? <AdminNavbar /> : <Navbar />}
-          {loggedIn && <AdminSidebar />}
-          {loggedIn ? (
-            <div className="p-4 sm:ml-64">
-              <div className="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-14">
-                {/* Your grid and content goes here */}
-                {children}
-                {loggedIn && <AdminFooter />}
+          {isAdminLoggedIn ? (
+            <>
+              <AdminNavbar />
+              <AdminSidebar />
+              <div className="p-4 sm:ml-64">
+                <div className="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-14">
+                  {children}
+                  <AdminFooter />
+                </div>
               </div>
-            </div>
+            </>
           ) : (
-            children
+            <>
+              <Navbar />
+              {children}
+              <Footer />
+            </>
           )}
-          <Footer />
         </div>
       </body>
     </html>

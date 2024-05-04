@@ -22,11 +22,9 @@ const TestimonialSection = () => {
                 </div>
                 <div className="testimonial-text">
                   <p>
-                    Lorem ipsum dolor sit amet consec adipis elit. Etiam accums
-                    lacus eget velit tincid, quis suscip justo dictum.
-                  </p>
-                  <h3>Customer Name</h3>
-                  <h4>Profession</h4>
+                  Aryan is a really understanding, humble and diligent yoga guru. He took time to understand the root problems of my dad’s health issues and adjusted his schedule according to my dad’s timing requirement...                  </p>
+                  <h3>VIKRANT GUPTA</h3>
+                  <h4>⭐⭐⭐⭐⭐</h4>
                 </div>
               </div>
             </CarouselItem>
@@ -37,11 +35,10 @@ const TestimonialSection = () => {
                 </div>
                 <div className="testimonial-text">
                   <p>
-                    Lorem ipsum dolor sit amet consec adipis elit. Etiam accums
-                    lacus eget velit tincid, quis suscip justo dictum.
+                  I feel full relax after taking meditational massage. The atmosphere of centre is positive vibes.
                   </p>
-                  <h3>Customer Name</h3>
-                  <h4>Profession</h4>
+                  <h3>RAUSHAN KUMAR SINGH</h3>
+                  <h4>⭐⭐⭐⭐⭐</h4>
                 </div>
               </div>
             </CarouselItem>
@@ -52,11 +49,10 @@ const TestimonialSection = () => {
                 </div>
                 <div className="testimonial-text">
                   <p>
-                    Lorem ipsum dolor sit amet consec adipis elit. Etiam accums
-                    lacus eget velit tincid, quis suscip justo dictum.
+                  I joined their session for one week, I can't explain in words what I felt in one week, but in that time I got a lot of mental peace, that too in just one week session and at very low fees.
                   </p>
-                  <h3>Customer Name</h3>
-                  <h4>Profession</h4>
+                  <h3>Rohit Keshri</h3>
+                  <h4>⭐⭐⭐⭐⭐</h4>
                 </div>
               </div>
             </CarouselItem>
