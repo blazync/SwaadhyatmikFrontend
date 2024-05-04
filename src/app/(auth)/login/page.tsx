@@ -1,10 +1,10 @@
-'use client'
+"use client";
 import Image from "next/image";
 import { useState } from "react";
 import { useFormik } from "formik";
 import { useRouter } from "next/navigation";
 import { loginSchema } from "./../../../schemas/index";
-import {loginUser} from "../../../api/auth"
+import { loginUser } from "../../../api/auth";
 
 const Login = ({ updateUserLoggedIn }) => {
   const router = useRouter();
@@ -21,11 +21,11 @@ const Login = ({ updateUserLoggedIn }) => {
         router.push("/dashboard");
       } catch (error) {
         console.error("Login failed:", error);
-      }
-    },
-  });
+      }
+    },
+  });
   return (
-    <div className=" flex justify-center items-center" style={{ margin: '5%' }}>
+    <div className=" flex justify-center items-center" style={{ margin: "5%" }}>
       <div className="max-w-fit max-w-md bg-white rounded-lg container card shadow-lg p-5 ">
         {/* Left side */}
         <div className="flex-1">
@@ -38,7 +38,9 @@ const Login = ({ updateUserLoggedIn }) => {
               height={100}
             />
             <h1 className="text-4xl font-bold mt-4">Welcome Back!</h1>
-            <p className="text-gray-500">Login to Get Started with Swaadhyatmik Services</p>
+            <p className="text-gray-500">
+              Login to Get Started with Swaadhyatmik Services
+            </p>
           </div>
         </div>
         {/* Right side */}
@@ -46,13 +48,12 @@ const Login = ({ updateUserLoggedIn }) => {
           {/* <h1 className="text-4xl font-bold mt-4">Login Now</h1>
           <p className="text-gray-500">Login to Get Started with Us</p> */}
           <form className="mt-6" onSubmit={formik.handleSubmit}>
-  
             <div className="mb-4">
               <label htmlFor="email" className="block text-gray-700">
                 Email
               </label>
               <input
-                type="email"
+                type="text"
                 id="email"
                 name="email"
                 value={formik.values.email}
@@ -62,7 +63,9 @@ const Login = ({ updateUserLoggedIn }) => {
                 className="mt-1 p-2 w-full border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
               />
               {formik.touched.email && formik.errors.email ? (
-                <p className="text-red-500 text-sm mt-1">{formik.errors.email}</p>
+                <p className="text-red-500 text-sm mt-1">
+                  {formik.errors.email}
+                </p>
               ) : null}
             </div>
             <div className="mb-4">
@@ -80,7 +83,9 @@ const Login = ({ updateUserLoggedIn }) => {
                 className="mt-1 p-2 w-full border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
               />
               {formik.touched.password && formik.errors.password ? (
-                <p className="text-red-500 text-sm mt-1">{formik.errors.password}</p>
+                <p className="text-red-500 text-sm mt-1">
+                  {formik.errors.password}
+                </p>
               ) : null}
             </div>
             <button

@@ -12,11 +12,11 @@ import Testimonial from '../components/sections/Testimonial';
 import Faq from '../components/sections/faq';
 import { applyAnimation, slideInFromTop } from "../util/motion";
  
-
+import DefaultLayout from "../app/layout/DefaultLayout"
 
 export default function Home() {
   return (
-    <div>
+    <DefaultLayout>
       <>
       <Head>
         <title>Swaadhyatmik Services</title>
@@ -64,6 +64,6 @@ export default function Home() {
       <Testimonial />
       <Faq />
       </>
-    </div>
+    </DefaultLayout>
   );
 }

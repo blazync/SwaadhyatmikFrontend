@@ -1,6 +1,8 @@
+import DefaultLayout from "../../layout/DefaultLayout";
+
 const page = () => {
   return (
-    <>
+    <DefaultLayout>
     <div className="container p-10 text-center">
     
     
@@ -114,7 +116,7 @@ const page = () => {
           </div>
     </div>
 
-    </>
+    </DefaultLayout>
 
   )
 }

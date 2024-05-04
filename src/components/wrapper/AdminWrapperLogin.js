@@ -1,26 +1,25 @@
 'use client'
 import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import authServices from "../../appwrite/auth";
-import AutherizationError from "../../components/errors/AuthenticationError";
+import AutherizationError from "../../components/errors/AuhtorizationError";
+import getJwtConfig from "../../config/JwtConfig";
 
 const AdminWrapperLogin = ({ children }) => {
   const [isAdminLoggedIn, setIsAdminLoggedIn] = useState(false);
-  console.log(isAdminLoggedIn);
   useEffect(() => {
     checkAdminLoggedIn();
   }, []);
 
   const checkAdminLoggedIn = async () => {
     try {
-      const user = await authServices.getCurrentUser();
-      console.log(user);
-      if (!user) return;
-      setIsAdminLoggedIn(true);
+      if (getJwtConfig().role === "user" || getJwtConfig().role === "admin")
+        setIsAdminLoggedIn(true);
     } catch (error) {
+      // If an error occurs, the admin is not logged in
       setIsAdminLoggedIn(false);
     }
   };
+
   return isAdminLoggedIn ? children : <AutherizationError />;
 };
 

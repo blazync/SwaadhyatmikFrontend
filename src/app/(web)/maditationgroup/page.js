@@ -1,6 +1,8 @@
+import DefaultLayout from "../../layout/DefaultLayout";
+
 const page = () => {
   return (
-    <>
+    <DefaultLayout>
     <div className="container p-10 text-center">
     
     <h1 class="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl"><span class="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">Maditation</span> Group.</h1>
@@ -118,7 +120,7 @@ const page = () => {
           </div>
     </div>
 
-    </>
+    </DefaultLayout>
 
   )
 }
