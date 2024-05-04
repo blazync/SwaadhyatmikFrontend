@@ -8,7 +8,8 @@ import TeamSection from '../components/sections/whatido';
 import About from '../components/sections/About';
 import Price from '../components/sections/Price';
 import Blog from '../components/sections/blog';
-import Testimonial from '../components/sections/testimonial.jsx';
+import Testimonial from '../components/sections/Testimonial';
+import Faq from '../components/sections/faq';
 import { applyAnimation, slideInFromTop } from "../util/motion";
  
 
@@ -61,6 +62,7 @@ export default function Home() {
       <TeamSection />
       <Blog />
       <Testimonial />
+      <Faq />
       </>
     </div>
   );

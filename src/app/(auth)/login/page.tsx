@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useFormik } from "formik";
 import { useRouter } from "next/navigation";
 import { loginSchema } from "./../../../schemas/index";
+import {loginUser} from "../../../api/auth"
 
 const Login = ({ updateUserLoggedIn }) => {
   const router = useRouter();
@@ -15,43 +16,17 @@ const Login = ({ updateUserLoggedIn }) => {
     validationSchema: loginSchema,
     onSubmit: async (values) => {
       try {
-        const response = await fetch("http://localhost:4000/user/login", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(values),
-        });
-
-        const data = await response.json();
-
-        if (response.ok && data.success === "Successful Login") {
-          // Login successful
-          console.log("Login successful:", data);
-          // Set token in session
-          sessionStorage.setItem("token", data.token);
-          sessionStorage.setItem("LoggedIn", 'true');
-          // Update loggedIn state in parent component
-          updateUserLoggedIn(true);
-          // Redirect to dashboard
-          window.location.reload();
-          router.push("/dashboard");
-        } else {
-          // Login failed
-          console.error("Login failed:", data);
-          // Show alert
-          alert("Login failed. Please check your credentials.");
-        }
+        const token = await loginUser({ ...values });
+        localStorage.setItem("token", token);
+        router.push("/dashboard");
       } catch (error) {
-        console.error("Login error:", error);
-        // Handle other errors, such as network errors
-      }
-    },
-  });
-
+        console.error("Login failed:", error);
+      }
+    },
+  });
   return (
     <div className=" flex justify-center items-center" style={{ margin: '5%' }}>
-      <div className="max-w-full max-w-md bg-white rounded-lg container card shadow-lg p-5 ">
+      <div className="max-w-fit max-w-md bg-white rounded-lg container card shadow-lg p-5 ">
         {/* Left side */}
         <div className="flex-1">
           <div className="text-center">
